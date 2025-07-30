@@ -1,0 +1,2051 @@
+  {
+
+  "movies": [
+  {
+    "title": "Animal",
+    "director": "Sandeep Reddy Vanga",
+    "actors": ["Ranbir Kapoor", "Anil Kapoor", "Bobby Deol", "Rashmika Mandanna", "Triptii Dimri"],
+    "genres": ["Action", "Crime", "Drama"],
+    "poster":"https://github.com/srujal4518/img/blob/main/animal.jpeg?raw=true"
+  },
+  {
+    "title": "Bloody Daddy",
+    "director": "Ali Abbas Zafar",
+    "actors": ["Shahid Kapoor", "Ronit Roy", "Rajeev Khandelwal", "Sanjay Kapoor", "Diana Penty"],
+    "genres": ["Action", "Thriller", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bloddy%20daddy.jpeg?raw=true"
+  },
+  {
+    "title": "Devara: Part 1",
+    "director": "Koratala Siva",
+    "actors": ["N. T. Rama Rao Jr.", "Saif Ali Khan", "Janhvi Kapoor", "Prakash Raj", "Srikanth", "Shine Tom Chacko"],
+    "genres": ["Action", "Drama", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/devara.jpeg?raw=true"
+  },
+  {
+    "title": "Fighter",
+    "director": "Siddharth Anand",
+    "actors": ["Hrithik Roshan", "Deepika Padukone", "Anil Kapoor"],
+    "genres": ["Action", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/fighter.jpeg?raw=true"
+  },
+  {
+    "title": "Jawaan",
+    "director": "Atlee Kumar",
+    "actors": ["Shah Rukh Khan", "Nayanthara", "Vijay Sethupathi"],
+    "genres": ["Action", "Thriller", "Drama", "Crime", "Mystery"],
+      "poster":"https://github.com/srujal4518/img/blob/main/jawaan.jpeg?raw=true"
+  },
+  {
+    "title": "Kill",
+    "director": "Nikhil Nagesh Bhat",
+    "actors": ["Lakshya", "Raghav Juyal", "Tanya Maniktala", "Abhishek Chauhan"],
+    "genres": ["Action", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/kill.jpeg?raw=true"
+  },
+  {
+    "title": "Mardaani",
+    "director": "Pradeep Sarkar",
+    "actors": ["Rani Mukerji", "Jisshu Sengupta", "Tahir Raj Bhasin", "Saanand Verma"],
+    "genres": ["Action", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/mardaani.jpeg?raw=true"
+  },
+  {
+    "title": "Pathaan",
+    "director": "Siddharth Anand",
+    "actors": ["Shah Rukh Khan", "Deepika Padukone", "John Abraham", "Dimple Kapadia", "Ashutosh Rana"],
+    "genres": ["Action", "Mystery", "Thriller", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pathaan.jpeg?raw=true"
+  },
+  {
+    "title": "RRR",
+    "director": "S. S. Rajamouli",
+    "actors": ["Ram Charan", "N. T. Rama Rao Jr.", "Alia Bhatt"],
+    "genres": ["Action", "Drama", "Historical"],
+      "poster": "https://github.com/srujal4518/img/blob/main/rrr.jpeg?raw=true"
+  },
+  {
+    "title": "Salaar: Part 1  Ceasefire",
+    "director": "Prashanth Neel",
+    "actors": ["Prabhas", "Prithviraj Sukumaran", "Shruti Haasan", "Jagapathi Babu", "Bobby Simha"],
+    "genres": ["Action", "Drama", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/salaar.jpeg?raw=true"
+  },
+  {
+    "title": "Tiger 3",
+    "director": "Maneesh Sharma",
+    "actors": ["Salman Khan", "Katrina Kaif", "Emraan Hashmi"],
+    "genres": ["Action", "Thriller", "Adventure", "Suspense"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tiger3.jpeg?raw=true"
+  },
+  {
+    "title": "Uri: The Surgical Strike",
+    "director": "Aditya Dhar",
+    "actors": ["Vicky Kaushal", "Yami Gautam", "Paresh Rawal", "Mohit Raina", "Kirti Kulhari"],
+    "genres": ["Action", "Drama", "War", "History"],
+      "poster": "https://github.com/srujal4518/img/blob/main/uri.jpeg?raw=true"
+  },
+  {
+    "title": "Wanted",
+    "director": "Prabhu Deva",
+    "actors": ["Salman Khan", "Ayesha Takia", "Bobby Deol"],
+    "genres": ["Action", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/wanted.jpeg?raw=true"
+  },
+  {
+    "title": "War",
+    "director": "Siddharth Anand",
+    "actors": ["Hrithik Roshan", "Tiger Shroff", "Vaani Kapoor"],
+    "genres": ["Action", "Thriller", "Spy"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/war.jpeg?raw=true"
+  },
+  {
+    "title": "War 2",
+    "director": "Ayan Mukerji",
+    "actors": ["Hrithik Roshan", "Jr NTR", "Kiara Advani"],
+    "genres": ["Action", "Thriller", "Spy"],
+      "poster": "https://github.com/srujal4518/img/blob/main/war2.jpeg?raw=true"
+  },
+  {
+    "title": "Bhaag Milkha Bhaag",
+    "director": "Rakeysh Omprakash Mehra",
+    "actors": ["Farhan Akhtar", "Sonam Kapoor", "Divya Dutta", "Prakash Raj"],
+    "genres": ["Biography", "Drama", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/milkha%5D.jpeg?raw=true"
+  },
+  {
+    "title": "M.S. Dhoni: The Untold Story",
+    "director": "Neeraj Pandey",
+    "actors": ["Sushant Singh Rajput", "Kiara Advani", "Disha Patani", "Anupam Kher"],
+    "genres": ["Biography", "Drama", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/msd.jpeg?raw=true"
+  },
+  {
+    "title": "Neerja",
+    "director": "Ram Madhvani",
+    "actors": ["Sonam Kapoor", "Shabana Azmi", "Yogendra Tikku", "Shekhar Ravjiani"],
+    "genres": ["Biography", "Drama", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/neerja.jpeg?raw=true"
+  },
+  {
+    "title": "Oppenheimer",
+    "director": "Christopher Nolan",
+    "actors": ["Cillian Murphy", "Emily Blunt", "Robert Downey Jr.", "Matt Damon"],
+    "genres": ["Biography", "Drama", "History"],
+      "poster": "https://github.com/srujal4518/img/blob/main/oppenheimer.jpeg?raw=true"
+  },
+  {
+    "title": "Paan Singh Tomar",
+    "director": "Tigmanshu Dhulia",
+    "actors": ["Irrfan Khan", "Mahie Gill", "Vipin Sharma", "Nawazuddin Siddiqui"],
+    "genres": ["Biography", "Drama", "Sport", "Crime", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/paansingh.jpeg?raw=true"
+  },
+  {
+    "title": "The Man Who Knew Infinity",
+    "director": "Matthew Brown",
+    "actors": ["Dev Patel", "Jeremy Irons", "Stephen Fry", "Toby Jones"],
+    "genres": ["Biography", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ramanujan.jpeg?raw=true"
+  },
+  {
+    "title": "Sachin: A Billion Dreams",
+    "director": "James Erskine",
+    "actors": ["Sachin Tendulkar", "Mayuresh Pem", "Anjali Tendulkar"],
+    "genres": ["Documentary", "Biography", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sachin.jpeg?raw=true"
+  },
+  {
+    "title": "Sanju",
+    "director": "Rajkumar Hirani",
+    "actors": ["Ranbir Kapoor", "Paresh Rawal", "Manisha Koirala", "Vicky Kaushal"],
+    "genres": ["Biography", "Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sanju.jpeg?raw=true"
+  },
+  {
+    "title": "Sardar Udham",
+    "director": "Shoojit Sircar",
+    "actors": ["Vicky Kaushal", "Bhagwan Tiwari", "Amardeep Jha", "Kumud Mishra"],
+    "genres": ["Biography", "Drama", "History"],
+      "poster":"https://github.com/srujal4518/img/blob/main/sardaruddham.jpeg?raw=true"
+  },
+  {
+    "title": "Super 30",
+    "director": "Vikas Bahl",
+    "actors": ["Hrithik Roshan", "MrunalThakur", "Pankaj Tripathi", "Nandish Sandhu"],
+    "genres": ["Biography", "Drama", "Education"],
+      "poster": "https://github.com/srujal4518/img/blob/main/super30.jpeg?raw=true"
+  },
+   {
+    "title": "3 Idiots",
+    "director": "Rajkumar Hirani",
+    "actors": ["Aamir Khan", "R. Madhavan", "Sharman Joshi", "Kareena Kapoor", "Boman Irani"],
+    "genres": ["Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/3idiots.jpeg?raw=true"
+  },
+  {
+    "title": "Bhagam Bhaag",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Paresh Rawal", "Hema Malini", "Om Puri", "Govinda"],
+    "genres": ["Comedy", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bhagam%20bhag.jpeg?raw=true"
+  },
+  {
+    "title": "Bhool Bhulaiyaa",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Vidya Balan", "Shiney Ahuja", "Paresh Rawal"],
+    "genres": ["Comedy", "Horror", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bhool%20bhulaiya.jpeg?raw=true"
+  },
+  {
+    "title": "Bhool chuk maaf",
+    "director": "Anees Bazmee",
+    "actors": ["Rajkummar Rao","wamiqa gabbi"],
+    "genres": ["Comedy","Mystery"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/bhool%20chuk%20maaf.jpeg?raw=true"
+  },
+  {
+    "title": "Golmaal: Fun Unlimited",
+    "director": "Rohit Shetty",
+    "actors": ["Ajay Devgn", "Arshad Warsi", "Tusshar Kapoor", "Sharman Joshi", "Paresh Rawal"],
+    "genres": ["Comedy"],
+      "poster": "https://github.com/srujal4518/img/blob/main/golmaal.jpeg?raw=true"                                 
+  },
+  {
+    "title": "Jug Jugg Jeeyo",                            
+    "director": "Raj Mehta",
+    "actors": ["Varun Dhawan", "Kiara Advani", "Anil Kapoor", "Neetu Kapoor", "Manish Paul"],
+    "genres": ["Comedy", "Drama", "Romance"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/jug%20jug%20jeeyo.jpeg?raw=true"                       
+  },
+  {
+    "title": "Khata Meetha",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Rajpal yadav", "Johnny lever"],
+    "genres": ["Comedy", "Drama"],
+      "poster":"https://github.com/srujal4518/img/blob/main/khatta%20meetha.jpeg?raw=true"
+  },
+  {
+    "title": "Lage Raho Munna Bhai",
+    "director": "Rajkumar Hirani",
+    "actors": ["Sanjay Dutt", "Arshad Warsi", "Vidya Balan", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Social"],
+      "poster": "https://github.com/srujal4518/img/blob/main/lage%20raho%20munna%20bhai.jpeg?raw=true"
+  },
+  {
+    "title": "Ludo",
+    "director": "Anurag Basu",
+    "actors": ["Abhishek Bachchan", "Rajkummar Rao", "Aditya Roy Kapur", "Fahadh Faasil", "Sanya Malhotra"],
+    "genres": ["Comedy", "Crime", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/ludo.jpeg?raw=true"
+  },
+  {
+    "title": "Munjhya",
+    "director": "Aditya Sarpodar",
+    "actors": ["Sharvari", "Abhay verma", "taran singh", "Mona Singh"],
+    "genres": ["Comedy", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/munjhya.jpeg?raw=true"
+  },
+  {
+    "title": "Munna Bhai M.B.B.S.",
+    "director": "Rajkumar Hirani",
+    "actors": ["Sanjay Dutt", "Arshad Warsi", "Gracy Singh", "Sneha Ullal", "Boman Irani"],
+    "genres": ["Comedy", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/munna%20bhai%20mbbs.jpeg?raw=true"
+  },
+  {
+    "title": "Phir Hera Pheri",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Suniel Shetty", "Paresh Rawal", "Shreyas Talpade"],
+    "genres": ["Comedy", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/phir%20hera%20pheri.jpeg?raw=true"
+  },
+  {
+    "title": "PK",
+    "director": "Rajkumar Hirani",
+    "actors": ["Aamir Khan", "Anushka Sharma", "Sushant Singh Rajput", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Science Fiction"],
+      "poster":"https://github.com/srujal4518/img/blob/main/pk.jpeg?raw=true"
+  },
+  {
+    "title": "Stree",
+    "director": "Amar Kaushik",
+    "actors": ["Rajkummar Rao", "Shraddha Kapoor", "Pankaj Tripathi", "Abhishek Banerjee", "Aparshakti Khurana"],
+    "genres": ["Comedy", "Horror"],
+      "poster": "https://github.com/srujal4518/img/blob/main/stree.jpeg?raw=true"
+  },
+  {
+    "title": "Stree 2: Sarkate Ka Aatank",
+    "director": "Amar Kaushik",
+    "actors": ["Rajkummar Rao", "Shraddha Kapoor", "Pankaj Tripathi", "Tamannaah Bhatia", "Varun Dhawan"],
+    "genres": ["Comedy", "Horror"],
+      "poster":"https://github.com/srujal4518/img/blob/main/stree2.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's The Avengers",
+    "director": "Joss Whedon",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/avengers1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Captain America: Civil War",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Chris Evans", "Robert Downey Jr.", "Scarlett Johansson", "Sebastian Stan", "Anthony Mackie"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/civil%20war1.jpeg?raw=true" 
+  },
+  {
+    "title": "Dc's The Dark Knight",
+    "director": "Christopher Nolan",
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine", "Maggie Gyllenhaal"],
+    "genres": ["Action", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dark%20knight1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Avengers: Endgame",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/endgame1.jpeg?raw=true"
+  },
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon‑Levitt", "Ellen Page", "Tom Hardy", "Ken Watanabe"],
+    "genres": ["Action", "Sci‑Fi", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/inception1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Avengers: Infinity War",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Benedict Cumberbatch", "Tom Holland", "Chadwick Boseman"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/infinity%20war1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Spider‑Man: No Way Home",
+    "director": "Jon Watts",
+    "actors": ["Tom Holland", "Zendaya", "Benedict Cumberbatch", "Jacob Batalon", "Jamie Foxx", "Willem Dafoe", "Alfred Molina"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/spider%20man1.jpeg?raw=true"
+  },
+   {
+    "title": "Bajrangi Bhaijaan",
+    "director": "Kabir Khan",
+    "actors": ["Salman Khan", "Harshaali Malhotra", "Nawazuddin Siddiqui", "Kareena Kapoor"],
+    "genres": ["Action", "Adventure", "Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bajrangi.jpeg?raw=true"
+   },
+  {
+    "title": "Barfi!",
+    "director": "Anurag Basu",
+    "actors": ["Ranbir Kapoor", "Priyanka Chopra", "Ileana D'Cruz"],
+    "genres": ["Comedy", "Drama", "Romance"],
+      "poster":"https://github.com/srujal4518/img/blob/main/barfi.jpeg?raw=true"
+  },
+  {
+    "title": "Dangal",
+    "director": "Nitesh Tiwari",
+    "actors": ["Aamir Khan", "Sakshi Tanwar", "Fatima Sana Shaikh", "Sanya Malhotra"],
+    "genres": ["Biography", "Sports", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dangal.jpeg?raw=true"
+  },
+  {
+    "title": "Dunki",
+    "director": "Rajkumar Hirani",
+    "actors": ["Shah Rukh Khan", "Taapsee Pannu", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Adventure", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dunki.jpeg?raw=true"
+  },
+  {
+    "title": "English Vinglish",
+    "director": "Gauri Shinde",
+    "actors": ["Sridevi", "Adil Hussain", "Mehdi Nebbou", "Priya Anand"],
+    "genres": ["Comedy", "Drama", "Family"],
+      "poster":"https://github.com/srujal4518/img/blob/main/englishvbinglish.jpeg?raw=true"
+  },
+  {
+    "title": "Fan",
+    "director": "Maneesh Sharma",
+    "actors": ["Shah Rukh Khan", "Shriya Pilgaonkar", "Sayani Gupta"],
+    "genres": ["Action", "Thriller", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/fan.jpeg?raw=true"
+  },
+  {
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine", "Ellen Burstyn"],
+    "genres": ["Science Fiction", "Drama", "Adventure"],
+      "poster": "https://github.com/srujal4518/img/blob/main/interstellar.jpeg?raw=true"
+  },
+  {
+    "title": "Jab We Met",
+    "director": "Imtiaz Ali",
+    "actors": ["Shahid Kapoor", "Kareena Kapoor"],
+    "genres": ["Romantic Comedy", "Drama", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/jabwemet.jpeg?raw=true"
+  },
+  {
+    "title": "Yeh Jawaani Hai Deewani",
+    "director": "Ayan Mukerji",
+    "actors": ["Ranbir Kapoor", "Deepika Padukone", "Aditya Roy Kapur", "Kalki Koechlin"],
+    "genres": ["Romance", "Comedy", "Drama"],
+      "poster":"https://github.com/srujal4518/img/blob/main/jawaani.jpeg?raw=true"
+  },
+  {
+    "title": "Rang De Basanti",
+    "director": "Rakeysh Omprakash Mehra",
+    "actors": ["Aamir Khan", "Siddharth", "Atul Kulkarni", "Sharman Joshi", "Kunal Kapoor", "Alice Patten"],
+    "genres": ["Drama", "Historical", "Patriotic"],
+      "poster": "https://github.com/srujal4518/img/blob/main/rang%20de%20basanti.jpeg?raw=true"
+  },
+  {
+    "title": "Taare Zameen Par",
+    "director": "Aamir Khan",
+    "actors": ["Aamir Khan", "Darsheel Safary", "Tisca Chopra", "Vipin Sharma", "Tanay Chheda"],
+    "genres": ["Drama", "Family", "Children"],
+      "poster": "https://github.com/srujal4518/img/blob/main/taare.jpeg?raw=true"
+  },
+  {
+    "title": "Tamasha",
+    "director": "Imtiaz Ali",
+    "actors": ["Ranbir Kapoor", "Deepika Padukone"],
+    "genres": ["Romance", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tamasha.jpeg?raw=true"
+  },
+  {
+    "title": "Wake Up Sid",
+    "director": "Ayan Mukerji",
+    "actors": ["Ranbir Kapoor", "Konkona Sen Sharma", "Anupam Kher"],
+    "genres": ["Drama", "Romance", "Coming‑of‑Age"],
+      "poster": "https://github.com/srujal4518/img/blob/main/wakeupsid.jpeg?raw=true"
+  },
+   {
+    "title": "13B: Fear Has a New Address",
+    "director": "Vikram Kumar",
+    "actors": ["R. Madhavan", "Neetu Chandra", "Sachin Khedekar", "Deepak Dobriyal"],
+    "genres": ["Horror", "Thriller"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/13B.jpeg?raw=true"
+  },
+  {
+    "title": "Annabelle",
+    "director": "John R. Leonetti",
+    "actors": ["Annabelle Wallis", "Ward Horton", "Alfre Woodard"],
+    "genres": ["Horror", "Supernatural"],
+      "poster": "https://github.com/srujal4518/img/blob/main/annabella.jpeg?raw=true"
+  },
+  {
+    "title": "Bhoot",
+    "director": "Ram Gopal Varma",
+    "actors": ["Ajay Devgn", "Urmila Matondkar", "Nana Patekar", "Rekha"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster":"https://github.com/srujal4518/img/blob/main/bhoot.jpeg?raw=true"
+  }, 
+  {
+    "title": "Chhorii",
+    "director": "Vishal Furia",
+    "actors": ["Nushrratt Bharuccha", "Mita Vashisht", "Rajesh Jais"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/chhori.jpeg?raw=true"
+  },
+  {
+    "title": "Chhorii 2",
+    "director": "Vishal Furia",
+    "actors": ["Nushrratt Bharuccha", "Soha Ali Khan", "Gashmeer Mahajani"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/chhori2.jpeg?raw=true"
+  },
+  {
+    "title": "The Conjuring",
+    "director": "James Wan",
+    "actors": ["Vera Farmiga", "Patrick Wilson", "Lili Taylor"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/conjuring.jpeg?raw=true"
+  },
+  {
+    "title": "The Conjuring 2",
+    "director": "James Wan",
+    "actors": ["Vera Farmiga", "Patrick Wilson", "Frances O’Connor"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/conjuring2.jpeg?raw=true"
+  },
+  {
+    "title": "It",
+    "director": "Andy Muschietti",
+    "actors": ["Bill Skarsgård", "Finn Wolfhard", "Sophia Lillis"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/it.jpeg?raw=true"
+  },
+  {
+    "title": "It Chapter Two",
+    "director": "Andy Muschietti",
+    "actors": ["James McAvoy", "Jessica Chastain", "Bill Skarsgård"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/it2.jpeg?raw=true"
+  },
+  {
+    "title": "The Last Exorcism",
+    "director": "Daniel Stamm",
+    "actors": ["Patrick Fabian", "Ashley Bell", "Caleb Landry Jones"],
+    "genres": ["Horror", "Found Footage", "Supernatural"],
+      "poster":"https://github.com/srujal4518/img/blob/main/last%20exorcism.jpeg?raw=true"
+  },
+  {
+    "title": "A Nun's Curse",
+    "director": "unknown",
+    "actors": ["Felissa Rose"],
+    "genres": ["Horror", "Supernatural", "Suspense"],
+      "poster": "https://github.com/srujal4518/img/blob/main/nun%20curse.jpeg?raw=true"
+  },
+  {
+    "title": "Pari",
+    "director": "Prosit Roy",
+    "actors": ["Anushka Sharma", "Parambrata Chattopadhyay", "Ribhu Dasgupta"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pari.jpeg?raw=true"
+  },
+  {
+    "title": "Pizza",
+    "director": "Anuraag Basu",
+    "actors": ["Akshay Oberoi", "Dipannita Sharma", "Parvin Dabbas"],
+    "genres": ["Horror", "Thriller", "Supernatural"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pizza.jpeg?raw=true"
+  },
+  {
+    "title": "Sinister",
+    "director": "Scott Derrickson",
+    "actors": ["Ethan Hawke", "Juliet Rylance", "James Ransone"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sinister.jpeg?raw=true"
+  },
+  {
+    "title": "Tumbbad",
+    "director": "Rahi Anil Barve",
+    "actors": ["Sohum Shah", "Jyoti Malshe", "Anangsha Biswas"],
+    "genres": ["Horror", "Fantasy", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tumbbad.jpeg?raw=true"
+  },
+   {
+    "title": "Badla",
+    "director": "Sujoy Ghosh",
+    "actors": ["Amitabh Bachchan", "Taapsee Pannu", "Amrita Singh", "Tony Luke", "Manav Kaul"],
+    "genres": ["Mystery", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/badla.jpeg?raw=true"
+  },
+  {
+    "title": "Drishyam",
+    "director": "Nishikant Kamat",
+    "actors": ["Ajay Devgn", "Tabu", "Shriya Saran", "Rajat Kapoor", "Ishita Dutta"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/drishyam.jpeg?raw=true"
+  },
+  {
+    "title": "Drishyam 2",
+    "director": "Abhishek Pathak",
+    "actors": ["Ajay Devgn", "Tabu", "Shriya Saran", "Akshaye Khanna", "Ishita Dutta", "Mrunal Jadhav", "Rajat Kapoor"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/drishyam2.jpeg?raw=true"
+  },
+  {
+    "title": "Forensic",
+    "director": "Vishal Furia",
+    "actors": ["Vikrant Massey", "Radhika Apte", "Prachi Desai", "Rohit Roy", "Vindu Dara Singh"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/forensic.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The First Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Vishwak Sen", "Ruhani Sharma"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit1.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The Second Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Adivi Sesh", "Meenakshi Chaudhary", "Suhas", "Rao Ramesh"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit2.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The Third Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Nani", "Srinidhi Shetty", "Prateik Babbar", "Rao Ramesh", "Adivi Sesh"],
+    "genres": ["Crime", "Thriller", "Mystery", "Action"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit3.jpeg?raw=true"
+  },
+  {
+    "title": "Ittefaq",
+    "director": "Abhay Chopra",
+    "actors": ["Sidharth Malhotra", "Sonakshi Sinha", "Akshaye Khanna", "Mandira Bedi", "Pavail Gulati"],
+    "genres": ["Crime", "Mystery", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ittefaq.jpeg?raw=true"
+  },
+  {
+    "title": "Kahaani",
+    "director": "Sujoy Ghosh",
+    "actors": ["Vidya Balan", "Parambrata Chatterjee", "Nawazuddin Siddiqui", "Indraneil Sengupta", "Saswata Chatterjee"],
+    "genres": ["Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/kahaani.jpeg?raw=true"
+  },
+  {
+    "title": "Monica, O My Darling",
+    "director": "Vasan Bala",
+    "actors": ["Rajkummar Rao", "Huma Qureshi", "Radhika Apte", "Sikandar Kher", "Bagavathi Perumal"],
+    "genres": ["Crime", "Comedy", "Thriller", "Neo-noir"],
+      "poster": "https://github.com/srujal4518/img/blob/main/monica%20o%20my%20darling.jpeg?raw=true"
+  },
+  {
+    "title": "Raman Raghav 2.0",
+    "director": "Anurag Kashyap",
+    "actors": ["Nawazuddin Siddiqui", "Vicky Kaushal", "Sobhita Dhulipala"],
+    "genres": ["Crime", "Thriller", "Psychological"],
+      "poster": "https://github.com/srujal4518/img/blob/main/raman.jpeg?raw=true"
+  },
+  {
+    "title": "Ratsasan",
+    "director": "Ram Kumar",
+    "actors": ["Vishnu Vishal", "Amala Paul", "Saravanan", "Vinoth Kishan"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ratsasan.jpeg?raw=true"
+  },
+  {
+    "title": "Spirit",
+    "director": "Sandeep Reddy Vanga",
+    "actors": ["Prabhas", "Triptii Dimri"],
+    "genres": ["Drama", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/spirit.jpeg?raw=true"
+  },
+  {
+    "title": "Ugly",
+    "director": "Anurag Kashyap",
+    "actors": ["Ronit Roy", "Tejaswini Kolhapure", "Surveen Chawla", "Rajat Kapoor"],
+    "genres": ["Thriller", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ugly.jpeg?raw=true"
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+],
+  "faqs": [
+    {
+      "tags": ["subscription", "pricing", "plans", "cost"],
+      "answer": "We offer monthly (₹199), quarterly (₹499), and yearly (₹999) subscription plans."
+    },
+    {
+      "tags": ["free", "trial", "demo", "try"],
+      "answer": "Sorry, we offer dont offer a free trial for  users."
+    },
+    {
+      "tags": ["cancel", "unsubscribe", "stop", "end"],
+      "answer": "To cancel your subscription, go to Settings > Subscription > Cancel Plan."
+    },
+    {
+      "tags": ["refund", "money", "back", "return"],
+      "answer": "Refunds are only applicable within 24 hours of a subscription purchase."
+    },
+    {
+      "tags": ["devices", "how many", "screens", "limit"],
+      "answer": "You can stream on up to 1 devices  based on your plan."
+    },
+    {
+      "tags": ["watch", "offline", "download", "without internet"],
+      "answer": "No, you cant download content and watch offline using our app."
+    },
+    {
+      "tags": ["4k", "hd", "quality", "video quality"],
+      "answer": "4K and Full HD content is available on supported plans and devices."
+    },
+    {
+      "tags": ["renew", "auto", "subscription renewal", "auto pay"],
+      "answer": "Your subscription renews automatically unless you cancel it before the renewal date."
+    },
+    {
+      "tags": ["language", "audio", "subtitles", "options"],
+      "answer": "Most content is available in multiple languages with subtitle support."
+    },
+    {
+      "tags": ["family", "sharing", "profile", "multiple users"],
+      "answer": "You can create up to 1 separate profile."
+    },
+    {
+      "tags": ["parental control", "kids", "safe", "restrict"],
+      "answer": "Enable Parental Controls from Settings to restrict mature content."
+    },
+    {
+      "tags": ["buffering", "slow", "stream", "problem"],
+      "answer": "Try lowering the video quality or check your internet connection."
+    },
+    {
+      "tags": ["movies", "shows", "what to watch", "latest"],
+      "answer": "Visit the Home tab for the latest trending and recommended content."
+    },
+    {
+      "tags": ["support", "help", "customer care", "contact"],
+      "answer": "You can reach us via chat or email support from the Help section in the app."
+    },
+    {
+      "tags": ["login", "can't login", "forgot password"],
+      "answer": "Use the 'Forgot Password' option on the login screen to reset your password."
+    },
+    {
+      "tags": ["cast", "smart tv", "connect", "screen"],
+      "answer": "Use Chromecast or AirPlay to cast content to your Smart TV."
+    },
+    {
+      "tags": ["watchlist", "save", "add later"],
+      "answer": "Click on the '+' or 'Add to Watchlist' button to save content for later."
+    },
+    {
+      "tags": ["ads", "commercials", "interruptions"],
+      "answer": "We offer an ad-free experience on all premium plans."
+    },
+    {
+      "tags": ["renewal failed", "payment error", "not working"],
+      "answer": "Check your payment method or update your billing info in Account Settings."
+    },
+    {
+      "tags": ["resume", "continue watching", "last played"],
+      "answer": "Your last watched progress is saved. Go to 'Continue Watching' to resume."
+    },
+    {
+      "tags": ["gift card", "coupon", "voucher", "redeem"],
+      "answer": "Enter your gift code under Account > Redeem Voucher to apply the offer."
+    },
+    {
+      "tags": ["data usage", "internet", "consume", "mb"],
+      "answer": "Streaming uses about 1GB/hour in SD, 3GB/hour in HD, and 7GB/hour in 4K."
+    },
+    {
+      "tags": ["region", "content not available", "location"],
+      "answer": "Some content may not be available in your region due to licensing restrictions."
+    },
+    {
+      "tags": ["account hacked", "security", "suspicious login"],
+      "answer": "Change your password immediately and contact support for account recovery."
+    },
+    {
+      "tags": ["payment methods", "upi", "credit card", "netbanking"],
+      "answer": "We accept UPI, credit/debit cards, net banking, and popular wallets."
+    },
+    {
+      "tags": ["student", "discount", "offer", "college"],
+      "answer": "Currently, we do not offer student discounts."
+    },
+    {
+      "tags": ["watch history", "delete", "clear"],
+      "answer": "Go to Profile > Viewing History to clear specific titles from your list."
+    },
+    {
+      "tags": ["screen limit reached", "too many users"],
+      "answer": "Your current plan has reached its screen limit. Upgrade for more access."
+    },
+    {
+      "tags": ["upcoming", "soon", "releasing", "next"],
+      "answer": "Check our 'Coming Soon' section for upcoming movies and shows."
+    },
+    {
+      "tags": ["account delete", "remove account", "permanent delete"],
+      "answer": "To delete your account, go to Settings > Account > Delete Account."
+    }
+  ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  "trivia": [
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Hemsworth",
+        "Mark Ruffalo",
+        "Chris Evans",
+        "Robert Downey Jr."
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Science Fiction",
+        "Horror",
+        "Drama",
+        "Romance"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Hemsworth",
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Mark Ruffalo"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Heath Ledger",
+        "Tom Hardy",
+        "Jared Leto",
+        "Joaquin Phoenix"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Hemsworth",
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Mark Ruffalo"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "PK",
+        "3 Idiots",
+        "Munna Bhai M.B.B.S.",
+        "Sanju"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2001",
+        "2005",
+        "2003",
+        "1999"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Once Upon a Time in Hollywood",
+        "Parasite",
+        "Joker",
+        "1917"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Rohit Shetty",
+        "Rajkumar Hirani",
+        "Karan Johar",
+        "Anurag Kashyap"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Tom Hardy",
+        "Heath Ledger",
+        "Joaquin Phoenix",
+        "Jared Leto"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Tom Cruise",
+        "Leonardo DiCaprio",
+        "Brad Pitt",
+        "Matt Damon"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Matt Damon",
+        "Tom Cruise"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "Once Upon a Time in Hollywood",
+        "1917",
+        "Joker"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Science Fiction",
+        "Romance",
+        "Drama",
+        "Horror"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Rang De Basanti",
+        "Slumdog Millionaire",
+        "Lagaan",
+        "Swades"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2001",
+        "2005",
+        "1999",
+        "2003"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "Once Upon a Time in Hollywood",
+        "1917",
+        "Joker"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Brad Pitt",
+        "Matt Damon",
+        "Tom Cruise",
+        "Leonardo DiCaprio"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Commando",
+        "Predator",
+        "RoboCop",
+        "The Terminator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Predator",
+        "The Terminator",
+        "Commando",
+        "RoboCop"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Horror",
+        "Science Fiction",
+        "Drama",
+        "Romance"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "RoboCop",
+        "The Terminator",
+        "Predator",
+        "Commando"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Rang De Basanti",
+        "Slumdog Millionaire",
+        "Lagaan",
+        "Swades"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Joker",
+        "Once Upon a Time in Hollywood",
+        "1917",
+        "Parasite"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "RoboCop",
+        "Predator",
+        "Commando",
+        "The Terminator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Evans",
+        "Mark Ruffalo",
+        "Robert Downey Jr.",
+        "Chris Hemsworth"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Predator",
+        "RoboCop",
+        "The Terminator",
+        "Commando"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Anurag Kashyap",
+        "Rajkumar Hirani",
+        "Karan Johar",
+        "Rohit Shetty"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2003",
+        "2005",
+        "2001",
+        "1999"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Joker",
+        "Parasite",
+        "Once Upon a Time in Hollywood",
+        "1917"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Swades",
+        "Lagaan",
+        "Slumdog Millionaire",
+        "Rang De Basanti"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Joker",
+        "Once Upon a Time in Hollywood",
+        "Parasite",
+        "1917"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Jared Leto",
+        "Heath Ledger",
+        "Tom Hardy",
+        "Joaquin Phoenix"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Commando",
+        "Predator",
+        "RoboCop",
+        "The Terminator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Drama",
+        "Romance",
+        "Horror",
+        "Science Fiction"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Joker",
+        "Parasite",
+        "Once Upon a Time in Hollywood",
+        "1917"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Leonardo DiCaprio",
+        "Matt Damon",
+        "Brad Pitt",
+        "Tom Cruise"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "3 Idiots",
+        "Munna Bhai M.B.B.S.",
+        "PK",
+        "Sanju"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Evans",
+        "Chris Hemsworth",
+        "Mark Ruffalo",
+        "Robert Downey Jr."
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Predator",
+        "RoboCop",
+        "The Terminator",
+        "Commando"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "1917",
+        "Joker",
+        "Once Upon a Time in Hollywood"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2005",
+        "2001",
+        "1999",
+        "2003"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Rajkumar Hirani",
+        "Rohit Shetty",
+        "Karan Johar",
+        "Anurag Kashyap"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Romance",
+        "Drama",
+        "Science Fiction",
+        "Horror"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Matt Damon",
+        "Tom Cruise",
+        "Leonardo DiCaprio",
+        "Brad Pitt"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Rang De Basanti",
+        "Lagaan",
+        "Slumdog Millionaire",
+        "Swades"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Leonardo DiCaprio",
+        "Brad Pitt",
+        "Matt Damon",
+        "Tom Cruise"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Tom Cruise",
+        "Brad Pitt",
+        "Matt Damon",
+        "Leonardo DiCaprio"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "Once Upon a Time in Hollywood",
+        "Joker",
+        "1917"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "PK",
+        "Munna Bhai M.B.B.S.",
+        "Sanju",
+        "3 Idiots"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Romance",
+        "Horror",
+        "Science Fiction",
+        "Drama"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "Sanju",
+        "3 Idiots",
+        "Munna Bhai M.B.B.S.",
+        "PK"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Anurag Kashyap",
+        "Rohit Shetty",
+        "Karan Johar",
+        "Rajkumar Hirani"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Matt Damon",
+        "Tom Cruise",
+        "Leonardo DiCaprio",
+        "Brad Pitt"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Tom Cruise",
+        "Matt Damon"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Tom Hardy",
+        "Heath Ledger",
+        "Joaquin Phoenix",
+        "Jared Leto"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Romance",
+        "Horror",
+        "Drama",
+        "Science Fiction"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Matt Damon",
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Tom Cruise"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Joker",
+        "1917",
+        "Parasite",
+        "Once Upon a Time in Hollywood"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Robert Downey Jr.",
+        "Mark Ruffalo",
+        "Chris Evans",
+        "Chris Hemsworth"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Slumdog Millionaire",
+        "Swades",
+        "Rang De Basanti",
+        "Lagaan"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Mark Ruffalo",
+        "Robert Downey Jr.",
+        "Chris Hemsworth",
+        "Chris Evans"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Rang De Basanti",
+        "Slumdog Millionaire",
+        "Lagaan",
+        "Swades"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Joaquin Phoenix",
+        "Jared Leto",
+        "Tom Hardy",
+        "Heath Ledger"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Rajkumar Hirani",
+        "Karan Johar",
+        "Anurag Kashyap",
+        "Rohit Shetty"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Robert Downey Jr.",
+        "Mark Ruffalo",
+        "Chris Hemsworth",
+        "Chris Evans"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Rang De Basanti",
+        "Lagaan",
+        "Swades",
+        "Slumdog Millionaire"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Predator",
+        "RoboCop",
+        "Commando",
+        "The Terminator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "PK",
+        "Sanju",
+        "3 Idiots",
+        "Munna Bhai M.B.B.S."
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "Who directed the movie '3 Idiots'?",
+      "options": [
+        "Rajkumar Hirani",
+        "Karan Johar",
+        "Rohit Shetty",
+        "Anurag Kashyap"
+      ],
+      "answer": "Rajkumar Hirani"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Heath Ledger",
+        "Jared Leto",
+        "Joaquin Phoenix",
+        "Tom Hardy"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "Munna Bhai M.B.B.S.",
+        "Sanju",
+        "3 Idiots",
+        "PK"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2005",
+        "1999",
+        "2001",
+        "2003"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Mark Ruffalo",
+        "Chris Hemsworth",
+        "Chris Evans",
+        "Robert Downey Jr."
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "PK",
+        "Munna Bhai M.B.B.S.",
+        "3 Idiots",
+        "Sanju"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "PK",
+        "Sanju",
+        "Munna Bhai M.B.B.S.",
+        "3 Idiots"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Joaquin Phoenix",
+        "Heath Ledger",
+        "Tom Hardy",
+        "Jared Leto"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2005",
+        "2001",
+        "1999",
+        "2003"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which actor played Iron Man in the Marvel movies?",
+      "options": [
+        "Chris Evans",
+        "Robert Downey Jr.",
+        "Mark Ruffalo",
+        "Chris Hemsworth"
+      ],
+      "answer": "Robert Downey Jr."
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Tom Cruise",
+        "Matt Damon"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "1917",
+        "Joker",
+        "Once Upon a Time in Hollywood"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Tom Cruise",
+        "Matt Damon",
+        "Brad Pitt",
+        "Leonardo DiCaprio"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Science Fiction",
+        "Drama",
+        "Horror",
+        "Romance"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Lagaan",
+        "Rang De Basanti",
+        "Slumdog Millionaire",
+        "Swades"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Tom Hardy",
+        "Joaquin Phoenix",
+        "Heath Ledger",
+        "Jared Leto"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "Parasite",
+        "1917",
+        "Joker",
+        "Once Upon a Time in Hollywood"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2003",
+        "2001",
+        "2005",
+        "1999"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "What genre does the movie 'Interstellar' belong to?",
+      "options": [
+        "Science Fiction",
+        "Romance",
+        "Horror",
+        "Drama"
+      ],
+      "answer": "Science Fiction"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Commando",
+        "Predator",
+        "The Terminator",
+        "RoboCop"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Matt Damon",
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Tom Cruise"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "Commando",
+        "The Terminator",
+        "Predator",
+        "RoboCop"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Who played the character of 'The Joker' in 'The Dark Knight'?",
+      "options": [
+        "Joaquin Phoenix",
+        "Heath Ledger",
+        "Tom Hardy",
+        "Jared Leto"
+      ],
+      "answer": "Heath Ledger"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "RoboCop",
+        "Commando",
+        "Predator",
+        "The Terminator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which movie won Best Picture at the Oscars in 2020?",
+      "options": [
+        "1917",
+        "Once Upon a Time in Hollywood",
+        "Joker",
+        "Parasite"
+      ],
+      "answer": "Parasite"
+    },
+    {
+      "question": "Who played the role of 'Jack' in Titanic?",
+      "options": [
+        "Brad Pitt",
+        "Matt Damon",
+        "Tom Cruise",
+        "Leonardo DiCaprio"
+      ],
+      "answer": "Leonardo DiCaprio"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "Sanju",
+        "Munna Bhai M.B.B.S.",
+        "PK",
+        "3 Idiots"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    },
+    {
+      "question": "In which year was the first Harry Potter movie released?",
+      "options": [
+        "2001",
+        "1999",
+        "2003",
+        "2005"
+      ],
+      "answer": "2001"
+    },
+    {
+      "question": "Which film is known for the quote 'I'll be back'?",
+      "options": [
+        "The Terminator",
+        "RoboCop",
+        "Commando",
+        "Predator"
+      ],
+      "answer": "The Terminator"
+    },
+    {
+      "question": "Which Indian movie features the song 'Jai Ho'?",
+      "options": [
+        "Lagaan",
+        "Swades",
+        "Rang De Basanti",
+        "Slumdog Millionaire"
+      ],
+      "answer": "Slumdog Millionaire"
+    },
+    {
+      "question": "Which Bollywood movie featured the character 'Munna Bhai'?",
+      "options": [
+        "Munna Bhai M.B.B.S.",
+        "PK",
+        "Sanju",
+        "3 Idiots"
+      ],
+      "answer": "Munna Bhai M.B.B.S."
+    }
+  ]
+}

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+#searchResults {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 cards per row */
+  gap: 20px;
+  padding: 40px 60px;
+  background-color: #000000;
+  min-height: 80vh;
+  padding-bottom: 60px; 
+  margin-top: 80px; /* Adds spacing from navbar */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Movie card styling */
+.movie-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Allow cards to stretch if needed */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  margin: 10px 0 5px;
+  font-size: 17px;
+  color: #111;
+}
+
+.movie-card p {
+  font-size: 13px;
+  padding: 0 10px 10px;
+  color: #444;
+}
+
+.movie-card button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin: 10px auto 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.movie-card button:hover {
+  background-color: #b20710;
+}
+
+/* ✅ Tablet: 2 cards per row */
+@media (max-width: 992px) {
+  #searchResults {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ Mobile: 1 card per row */
+@media (max-width: 600px) {
+  #searchResults {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    height: 300px;
+  }
+
+  .movie-card h3 {
+    font-size: 15px;
+  }
+
+  .movie-card p {
+    font-size: 12px;
+  }
+
+  .movie-card button {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
+
+</style>
+ 
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+  <section id="header">
+    <a href="hello.html">
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <ul id="navbar">
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+       <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search..."
+            required
+            onkeyup="searchMovies(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+      </li>
+
+      <li><a class="active" href="hello.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <div id="mobile">
+      <a href="profile.html"><i class='bx bx-user'></i></a>
+      <i class='bx bx-menu' id="bar"></i>
+    </div>
+  </section>
+
+  <!-- ✅ Search Results Section -->
+
+ 
+
+<section id="searchResults">
+    <h2 id="searchHeading">Search Results</h2>
+</section>
+
+
+  <!-- ✅ Movie Search JS -->
+ <script>
+  const movies = [
+     {
+    "title": "Animal",
+    "director": "Sandeep Reddy Vanga",
+    "actors": ["Ranbir Kapoor", "Anil Kapoor", "Bobby Deol", "Rashmika Mandanna", "Triptii Dimri"],
+    "genres": ["Action", "Crime", "Drama"],
+    "poster":"https://github.com/srujal4518/img/blob/main/animal.jpeg?raw=true"
+  },
+  {
+    "title": "Bloody Daddy",
+    "director": "Ali Abbas Zafar",
+    "actors": ["Shahid Kapoor", "Ronit Roy", "Rajeev Khandelwal", "Sanjay Kapoor", "Diana Penty"],
+    "genres": ["Action", "Thriller", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bloddy%20daddy.jpeg?raw=true"
+  },
+  {
+    "title": "Devara: Part 1",
+    "director": "Koratala Siva",
+    "actors": ["N. T. Rama Rao Jr.", "Saif Ali Khan", "Janhvi Kapoor", "Prakash Raj", "Srikanth", "Shine Tom Chacko"],
+    "genres": ["Action", "Drama", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/devara.jpeg?raw=true"
+  },
+  {
+    "title": "Fighter",
+    "director": "Siddharth Anand",
+    "actors": ["Hrithik Roshan", "Deepika Padukone", "Anil Kapoor"],
+    "genres": ["Action", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/fighter.jpeg?raw=true"
+  },
+  {
+    "title": "Jawaan",
+    "director": "Atlee Kumar",
+    "actors": ["Shah Rukh Khan", "Nayanthara", "Vijay Sethupathi"],
+    "genres": ["Action", "Thriller", "Drama", "Crime", "Mystery"],
+      "poster":"https://github.com/srujal4518/img/blob/main/jawaan.jpeg?raw=true"
+  },
+  {
+    "title": "Kill",
+    "director": "Nikhil Nagesh Bhat",
+    "actors": ["Lakshya", "Raghav Juyal", "Tanya Maniktala", "Abhishek Chauhan"],
+    "genres": ["Action", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/kill.jpeg?raw=true"
+  },
+  {
+    "title": "Mardaani",
+    "director": "Pradeep Sarkar",
+    "actors": ["Rani Mukerji", "Jisshu Sengupta", "Tahir Raj Bhasin", "Saanand Verma"],
+    "genres": ["Action", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/mardaani.jpeg?raw=true"
+  },
+  {
+    "title": "Pathaan",
+    "director": "Siddharth Anand",
+    "actors": ["Shah Rukh Khan", "Deepika Padukone", "John Abraham", "Dimple Kapadia", "Ashutosh Rana"],
+    "genres": ["Action", "Mystery", "Thriller", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pathaan.jpeg?raw=true"
+  },
+  {
+    "title": "RRR",
+    "director": "S. S. Rajamouli",
+    "actors": ["Ram Charan", "N. T. Rama Rao Jr.", "Alia Bhatt"],
+    "genres": ["Action", "Drama", "Historical"],
+      "poster": "https://github.com/srujal4518/img/blob/main/rrr.jpeg?raw=true"
+  },
+  {
+    "title": "Salaar: Part 1  Ceasefire",
+    "director": "Prashanth Neel",
+    "actors": ["Prabhas", "Prithviraj Sukumaran", "Shruti Haasan", "Jagapathi Babu", "Bobby Simha"],
+    "genres": ["Action", "Drama", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/salaar.jpeg?raw=true"
+  },
+  {
+    "title": "Tiger 3",
+    "director": "Maneesh Sharma",
+    "actors": ["Salman Khan", "Katrina Kaif", "Emraan Hashmi"],
+    "genres": ["Action", "Thriller", "Adventure", "Suspense"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tiger3.jpeg?raw=true"
+  },
+  {
+    "title": "Uri: The Surgical Strike",
+    "director": "Aditya Dhar",
+    "actors": ["Vicky Kaushal", "Yami Gautam", "Paresh Rawal", "Mohit Raina", "Kirti Kulhari"],
+    "genres": ["Action", "Drama", "War", "History"],
+      "poster": "https://github.com/srujal4518/img/blob/main/uri.jpeg?raw=true"
+  },
+  {
+    "title": "Wanted",
+    "director": "Prabhu Deva",
+    "actors": ["Salman Khan", "Ayesha Takia", "Bobby Deol"],
+    "genres": ["Action", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/wanted.jpeg?raw=true"
+  },
+  {
+    "title": "War",
+    "director": "Siddharth Anand",
+    "actors": ["Hrithik Roshan", "Tiger Shroff", "Vaani Kapoor"],
+    "genres": ["Action", "Thriller", "Spy"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/war.jpeg?raw=true"
+  },
+  {
+    "title": "War 2",
+    "director": "Ayan Mukerji",
+    "actors": ["Hrithik Roshan", "Jr NTR", "Kiara Advani"],
+    "genres": ["Action", "Thriller", "Spy"],
+      "poster": "https://github.com/srujal4518/img/blob/main/war2.jpeg?raw=true"
+  },
+  {
+    "title": "Bhaag Milkha Bhaag",
+    "director": "Rakeysh Omprakash Mehra",
+    "actors": ["Farhan Akhtar", "Sonam Kapoor", "Divya Dutta", "Prakash Raj"],
+    "genres": ["Biography", "Drama", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/milkha%5D.jpeg?raw=true"
+  },
+  {
+    "title": "M.S. Dhoni: The Untold Story",
+    "director": "Neeraj Pandey",
+    "actors": ["Sushant Singh Rajput", "Kiara Advani", "Disha Patani", "Anupam Kher"],
+    "genres": ["Biography", "Drama", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/msd.jpeg?raw=true"
+  },
+  {
+    "title": "Neerja",
+    "director": "Ram Madhvani",
+    "actors": ["Sonam Kapoor", "Shabana Azmi", "Yogendra Tikku", "Shekhar Ravjiani"],
+    "genres": ["Biography", "Drama", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/neerja.jpeg?raw=true"
+  },
+  {
+    "title": "Oppenheimer",
+    "director": "Christopher Nolan",
+    "actors": ["Cillian Murphy", "Emily Blunt", "Robert Downey Jr.", "Matt Damon"],
+    "genres": ["Biography", "Drama", "History"],
+      "poster": "https://github.com/srujal4518/img/blob/main/oppenheimer.jpeg?raw=true"
+  },
+  {
+    "title": "Paan Singh Tomar",
+    "director": "Tigmanshu Dhulia",
+    "actors": ["Irrfan Khan", "Mahie Gill", "Vipin Sharma", "Nawazuddin Siddiqui"],
+    "genres": ["Biography", "Drama", "Sport", "Crime", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/paansingh.jpeg?raw=true"
+  },
+  {
+    "title": "The Man Who Knew Infinity",
+    "director": "Matthew Brown",
+    "actors": ["Dev Patel", "Jeremy Irons", "Stephen Fry", "Toby Jones"],
+    "genres": ["Biography", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ramanujan.jpeg?raw=true"
+  },
+  {
+    "title": "Sachin: A Billion Dreams",
+    "director": "James Erskine",
+    "actors": ["Sachin Tendulkar", "Mayuresh Pem", "Anjali Tendulkar"],
+    "genres": ["Documentary", "Biography", "Sport"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sachin.jpeg?raw=true"
+  },
+  {
+    "title": "Sanju",
+    "director": "Rajkumar Hirani",
+    "actors": ["Ranbir Kapoor", "Paresh Rawal", "Manisha Koirala", "Vicky Kaushal"],
+    "genres": ["Biography", "Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sanju.jpeg?raw=true"
+  },
+  {
+    "title": "Sardar Udham",
+    "director": "Shoojit Sircar",
+    "actors": ["Vicky Kaushal", "Bhagwan Tiwari", "Amardeep Jha", "Kumud Mishra"],
+    "genres": ["Biography", "Drama", "History"],
+      "poster":"https://github.com/srujal4518/img/blob/main/sardaruddham.jpeg?raw=true"
+  },
+  {
+    "title": "Super 30",
+    "director": "Vikas Bahl",
+    "actors": ["Hrithik Roshan", "MrunalThakur", "Pankaj Tripathi", "Nandish Sandhu"],
+    "genres": ["Biography", "Drama", "Education"],
+      "poster": "https://github.com/srujal4518/img/blob/main/super30.jpeg?raw=true"
+  },
+   {
+    "title": "3 Idiots",
+    "director": "Rajkumar Hirani",
+    "actors": ["Aamir Khan", "R. Madhavan", "Sharman Joshi", "Kareena Kapoor", "Boman Irani"],
+    "genres": ["Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/3idiots.jpeg?raw=true"
+  },
+  {
+    "title": "Bhagam Bhaag",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Paresh Rawal", "Hema Malini", "Om Puri", "Govinda"],
+    "genres": ["Comedy", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bhagam%20bhag.jpeg?raw=true"
+  },
+  {
+    "title": "Bhool Bhulaiyaa",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Vidya Balan", "Shiney Ahuja", "Paresh Rawal"],
+    "genres": ["Comedy", "Horror", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bhool%20bhulaiya.jpeg?raw=true"
+  },
+  {
+    "title": "Bhool chuk maaf",
+    "director": "Anees Bazmee",
+    "actors": ["Rajkummar Rao","wamiqa gabbi"],
+    "genres": ["Comedy","Mystery"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/bhool%20chuk%20maaf.jpeg?raw=true"
+  },
+  {
+    "title": "Golmaal: Fun Unlimited",
+    "director": "Rohit Shetty",
+    "actors": ["Ajay Devgn", "Arshad Warsi", "Tusshar Kapoor", "Sharman Joshi", "Paresh Rawal"],
+    "genres": ["Comedy"],
+      "poster": "https://github.com/srujal4518/img/blob/main/golmaal.jpeg?raw=true"                                 
+  },
+  {
+    "title": "Jug Jugg Jeeyo",                            
+    "director": "Raj Mehta",
+    "actors": ["Varun Dhawan", "Kiara Advani", "Anil Kapoor", "Neetu Kapoor", "Manish Paul"],
+    "genres": ["Comedy", "Drama", "Romance"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/jug%20jug%20jeeyo.jpeg?raw=true"                       
+  },
+  {
+    "title": "Khata Meetha",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Rajpal yadav", "Johnny lever"],
+    "genres": ["Comedy", "Drama"],
+      "poster":"https://github.com/srujal4518/img/blob/main/khatta%20meetha.jpeg?raw=true"
+  },
+  {
+    "title": "Lage Raho Munna Bhai",
+    "director": "Rajkumar Hirani",
+    "actors": ["Sanjay Dutt", "Arshad Warsi", "Vidya Balan", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Social"],
+      "poster": "https://github.com/srujal4518/img/blob/main/lage%20raho%20munna%20bhai.jpeg?raw=true"
+  },
+  {
+    "title": "Ludo",
+    "director": "Anurag Basu",
+    "actors": ["Abhishek Bachchan", "Rajkummar Rao", "Aditya Roy Kapur", "Fahadh Faasil", "Sanya Malhotra"],
+    "genres": ["Comedy", "Crime", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/ludo.jpeg?raw=true"
+  },
+  {
+    "title": "Munjhya",
+    "director": "Aditya Sarpodar",
+    "actors": ["Sharvari", "Abhay verma", "taran singh", "Mona Singh"],
+    "genres": ["Comedy", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/munjhya.jpeg?raw=true"
+  },
+  {
+    "title": "Munna Bhai M.B.B.S.",
+    "director": "Rajkumar Hirani",
+    "actors": ["Sanjay Dutt", "Arshad Warsi", "Gracy Singh", "Sneha Ullal", "Boman Irani"],
+    "genres": ["Comedy", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/munna%20bhai%20mbbs.jpeg?raw=true"
+  },
+  {
+    "title": "Phir Hera Pheri",
+    "director": "Priyadarshan",
+    "actors": ["Akshay Kumar", "Suniel Shetty", "Paresh Rawal", "Shreyas Talpade"],
+    "genres": ["Comedy", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/phir%20hera%20pheri.jpeg?raw=true"
+  },
+  {
+    "title": "PK",
+    "director": "Rajkumar Hirani",
+    "actors": ["Aamir Khan", "Anushka Sharma", "Sushant Singh Rajput", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Science Fiction"],
+      "poster":"https://github.com/srujal4518/img/blob/main/pk.jpeg?raw=true"
+  },
+  {
+    "title": "Stree",
+    "director": "Amar Kaushik",
+    "actors": ["Rajkummar Rao", "Shraddha Kapoor", "Pankaj Tripathi", "Abhishek Banerjee", "Aparshakti Khurana"],
+    "genres": ["Comedy", "Horror"],
+      "poster": "https://github.com/srujal4518/img/blob/main/stree.jpeg?raw=true"
+  },
+  {
+    "title": "Stree 2: Sarkate Ka Aatank",
+    "director": "Amar Kaushik",
+    "actors": ["Rajkummar Rao", "Shraddha Kapoor", "Pankaj Tripathi", "Tamannaah Bhatia", "Varun Dhawan"],
+    "genres": ["Comedy", "Horror"],
+      "poster":"https://github.com/srujal4518/img/blob/main/stree2.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's The Avengers",
+    "director": "Joss Whedon",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/avengers1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Captain America: Civil War",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Chris Evans", "Robert Downey Jr.", "Scarlett Johansson", "Sebastian Stan", "Anthony Mackie"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/civil%20war1.jpeg?raw=true" 
+  },
+  {
+    "title": "Dc's The Dark Knight",
+    "director": "Christopher Nolan",
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine", "Maggie Gyllenhaal"],
+    "genres": ["Action", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dark%20knight1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Avengers: Endgame",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Jeremy Renner"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/endgame1.jpeg?raw=true"
+  },
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon‑Levitt", "Ellen Page", "Tom Hardy", "Ken Watanabe"],
+    "genres": ["Action", "Sci‑Fi", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/inception1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Avengers: Infinity War",
+    "director": "Anthony Russo, Joe Russo",
+    "actors": ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo", "Chris Hemsworth", "Scarlett Johansson", "Benedict Cumberbatch", "Tom Holland", "Chadwick Boseman"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster": "https://github.com/srujal4518/img/blob/main/infinity%20war1.jpeg?raw=true"
+  },
+  {
+    "title": "Marvel's Spider‑Man: No Way Home",
+    "director": "Jon Watts",
+    "actors": ["Tom Holland", "Zendaya", "Benedict Cumberbatch", "Jacob Batalon", "Jamie Foxx", "Willem Dafoe", "Alfred Molina"],
+    "genres": ["Action", "Adventure", "Sci‑Fi"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/spider%20man1.jpeg?raw=true"
+  },
+   {
+    "title": "Bajrangi Bhaijaan",
+    "director": "Kabir Khan",
+    "actors": ["Salman Khan", "Harshaali Malhotra", "Nawazuddin Siddiqui", "Kareena Kapoor"],
+    "genres": ["Action", "Adventure", "Comedy", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/bajrangi.jpeg?raw=true"
+   },
+  {
+    "title": "Barfi!",
+    "director": "Anurag Basu",
+    "actors": ["Ranbir Kapoor", "Priyanka Chopra", "Ileana D'Cruz"],
+    "genres": ["Comedy", "Drama", "Romance"],
+      "poster":"https://github.com/srujal4518/img/blob/main/barfi.jpeg?raw=true"
+  },
+  {
+    "title": "Dangal",
+    "director": "Nitesh Tiwari",
+    "actors": ["Aamir Khan", "Sakshi Tanwar", "Fatima Sana Shaikh", "Sanya Malhotra"],
+    "genres": ["Biography", "Sports", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dangal.jpeg?raw=true"
+  },
+  {
+    "title": "Dunki",
+    "director": "Rajkumar Hirani",
+    "actors": ["Shah Rukh Khan", "Taapsee Pannu", "Boman Irani"],
+    "genres": ["Comedy", "Drama", "Adventure", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/dunki.jpeg?raw=true"
+  },
+  {
+    "title": "English Vinglish",
+    "director": "Gauri Shinde",
+    "actors": ["Sridevi", "Adil Hussain", "Mehdi Nebbou", "Priya Anand"],
+    "genres": ["Comedy", "Drama", "Family"],
+      "poster":"https://github.com/srujal4518/img/blob/main/englishvbinglish.jpeg?raw=true"
+  },
+  {
+    "title": "Fan",
+    "director": "Maneesh Sharma",
+    "actors": ["Shah Rukh Khan", "Shriya Pilgaonkar", "Sayani Gupta"],
+    "genres": ["Action", "Thriller", "Drama"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/fan.jpeg?raw=true"
+  },
+  {
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "actors": ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain", "Michael Caine", "Ellen Burstyn"],
+    "genres": ["Science Fiction", "Drama", "Adventure"],
+      "poster": "https://github.com/srujal4518/img/blob/main/interstellar.jpeg?raw=true"
+  },
+  {
+    "title": "Jab We Met",
+    "director": "Imtiaz Ali",
+    "actors": ["Shahid Kapoor", "Kareena Kapoor"],
+    "genres": ["Romantic Comedy", "Drama", "Romance"],
+      "poster": "https://github.com/srujal4518/img/blob/main/jabwemet.jpeg?raw=true"
+  },
+  {
+    "title": "Yeh Jawaani Hai Deewani",
+    "director": "Ayan Mukerji",
+    "actors": ["Ranbir Kapoor", "Deepika Padukone", "Aditya Roy Kapur", "Kalki Koechlin"],
+    "genres": ["Romance", "Comedy", "Drama"],
+      "poster":"https://github.com/srujal4518/img/blob/main/jawaani.jpeg?raw=true"
+  },
+  {
+    "title": "Rang De Basanti",
+    "director": "Rakeysh Omprakash Mehra",
+    "actors": ["Aamir Khan", "Siddharth", "Atul Kulkarni", "Sharman Joshi", "Kunal Kapoor", "Alice Patten"],
+    "genres": ["Drama", "Historical", "Patriotic"],
+      "poster": "https://github.com/srujal4518/img/blob/main/rang%20de%20basanti.jpeg?raw=true"
+  },
+  {
+    "title": "Taare Zameen Par",
+    "director": "Aamir Khan",
+    "actors": ["Aamir Khan", "Darsheel Safary", "Tisca Chopra", "Vipin Sharma", "Tanay Chheda"],
+    "genres": ["Drama", "Family", "Children"],
+      "poster": "https://github.com/srujal4518/img/blob/main/taare.jpeg?raw=true"
+  },
+  {
+    "title": "Tamasha",
+    "director": "Imtiaz Ali",
+    "actors": ["Ranbir Kapoor", "Deepika Padukone"],
+    "genres": ["Romance", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tamasha.jpeg?raw=true"
+  },
+  {
+    "title": "Wake Up Sid",
+    "director": "Ayan Mukerji",
+    "actors": ["Ranbir Kapoor", "Konkona Sen Sharma", "Anupam Kher"],
+    "genres": ["Drama", "Romance", "Coming‑of‑Age"],
+      "poster": "https://github.com/srujal4518/img/blob/main/wakeupsid.jpeg?raw=true"
+  },
+   {
+    "title": "13B: Fear Has a New Address",
+    "director": "Vikram Kumar",
+    "actors": ["R. Madhavan", "Neetu Chandra", "Sachin Khedekar", "Deepak Dobriyal"],
+    "genres": ["Horror", "Thriller"],
+      "poster":  "https://github.com/srujal4518/img/blob/main/13B.jpeg?raw=true"
+  },
+  {
+    "title": "Annabelle",
+    "director": "John R. Leonetti",
+    "actors": ["Annabelle Wallis", "Ward Horton", "Alfre Woodard"],
+    "genres": ["Horror", "Supernatural"],
+      "poster": "https://github.com/srujal4518/img/blob/main/annabella.jpeg?raw=true"
+  },
+  {
+    "title": "Bhoot",
+    "director": "Ram Gopal Varma",
+    "actors": ["Ajay Devgn", "Urmila Matondkar", "Nana Patekar", "Rekha"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster":"https://github.com/srujal4518/img/blob/main/bhoot.jpeg?raw=true"
+  }, 
+  {
+    "title": "Chhorii",
+    "director": "Vishal Furia",
+    "actors": ["Nushrratt Bharuccha", "Mita Vashisht", "Rajesh Jais"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/chhori.jpeg?raw=true"
+  },
+  {
+    "title": "Chhorii 2",
+    "director": "Vishal Furia",
+    "actors": ["Nushrratt Bharuccha", "Soha Ali Khan", "Gashmeer Mahajani"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/chhori2.jpeg?raw=true"
+  },
+  {
+    "title": "The Conjuring",
+    "director": "James Wan",
+    "actors": ["Vera Farmiga", "Patrick Wilson", "Lili Taylor"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/conjuring.jpeg?raw=true"
+  },
+  {
+    "title": "The Conjuring 2",
+    "director": "James Wan",
+    "actors": ["Vera Farmiga", "Patrick Wilson", "Frances O’Connor"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/conjuring2.jpeg?raw=true"
+  },
+  {
+    "title": "It",
+    "director": "Andy Muschietti",
+    "actors": ["Bill Skarsgård", "Finn Wolfhard", "Sophia Lillis"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/it.jpeg?raw=true"
+  },
+  {
+    "title": "It Chapter Two",
+    "director": "Andy Muschietti",
+    "actors": ["James McAvoy", "Jessica Chastain", "Bill Skarsgård"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/it2.jpeg?raw=true"
+  },
+  {
+    "title": "The Last Exorcism",
+    "director": "Daniel Stamm",
+    "actors": ["Patrick Fabian", "Ashley Bell", "Caleb Landry Jones"],
+    "genres": ["Horror", "Found Footage", "Supernatural"],
+      "poster":"https://github.com/srujal4518/img/blob/main/last%20exorcism.jpeg?raw=true"
+  },
+  {
+    "title": "A Nun's Curse",
+    "director": "unknown",
+    "actors": ["Felissa Rose"],
+    "genres": ["Horror", "Supernatural", "Suspense"],
+      "poster": "https://github.com/srujal4518/img/blob/main/nun%20curse.jpeg?raw=true"
+  },
+  {
+    "title": "Pari",
+    "director": "Prosit Roy",
+    "actors": ["Anushka Sharma", "Parambrata Chattopadhyay", "Ribhu Dasgupta"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pari.jpeg?raw=true"
+  },
+  {
+    "title": "Pizza",
+    "director": "Anuraag Basu",
+    "actors": ["Akshay Oberoi", "Dipannita Sharma", "Parvin Dabbas"],
+    "genres": ["Horror", "Thriller", "Supernatural"],
+      "poster": "https://github.com/srujal4518/img/blob/main/pizza.jpeg?raw=true"
+  },
+  {
+    "title": "Sinister",
+    "director": "Scott Derrickson",
+    "actors": ["Ethan Hawke", "Juliet Rylance", "James Ransone"],
+    "genres": ["Horror", "Supernatural", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/sinister.jpeg?raw=true"
+  },
+  {
+    "title": "Tumbbad",
+    "director": "Rahi Anil Barve",
+    "actors": ["Sohum Shah", "Jyoti Malshe", "Anangsha Biswas"],
+    "genres": ["Horror", "Fantasy", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/tumbbad.jpeg?raw=true"
+  },
+   {
+    "title": "Badla",
+    "director": "Sujoy Ghosh",
+    "actors": ["Amitabh Bachchan", "Taapsee Pannu", "Amrita Singh", "Tony Luke", "Manav Kaul"],
+    "genres": ["Mystery", "Thriller", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/badla.jpeg?raw=true"
+  },
+  {
+    "title": "Drishyam",
+    "director": "Nishikant Kamat",
+    "actors": ["Ajay Devgn", "Tabu", "Shriya Saran", "Rajat Kapoor", "Ishita Dutta"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/drishyam.jpeg?raw=true"
+  },
+  {
+    "title": "Drishyam 2",
+    "director": "Abhishek Pathak",
+    "actors": ["Ajay Devgn", "Tabu", "Shriya Saran", "Akshaye Khanna", "Ishita Dutta", "Mrunal Jadhav", "Rajat Kapoor"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/drishyam2.jpeg?raw=true"
+  },
+  {
+    "title": "Forensic",
+    "director": "Vishal Furia",
+    "actors": ["Vikrant Massey", "Radhika Apte", "Prachi Desai", "Rohit Roy", "Vindu Dara Singh"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/forensic.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The First Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Vishwak Sen", "Ruhani Sharma"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit1.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The Second Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Adivi Sesh", "Meenakshi Chaudhary", "Suhas", "Rao Ramesh"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit2.jpeg?raw=true"
+  },
+  {
+    "title": "Hit: The Third Case",
+    "director": "Sailesh Kolanu",
+    "actors": ["Nani", "Srinidhi Shetty", "Prateik Babbar", "Rao Ramesh", "Adivi Sesh"],
+    "genres": ["Crime", "Thriller", "Mystery", "Action"],
+      "poster": "https://github.com/srujal4518/img/blob/main/hit3.jpeg?raw=true"
+  },
+  {
+    "title": "Ittefaq",
+    "director": "Abhay Chopra",
+    "actors": ["Sidharth Malhotra", "Sonakshi Sinha", "Akshaye Khanna", "Mandira Bedi", "Pavail Gulati"],
+    "genres": ["Crime", "Mystery", "Thriller"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ittefaq.jpeg?raw=true"
+  },
+  {
+    "title": "Kahaani",
+    "director": "Sujoy Ghosh",
+    "actors": ["Vidya Balan", "Parambrata Chatterjee", "Nawazuddin Siddiqui", "Indraneil Sengupta", "Saswata Chatterjee"],
+    "genres": ["Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/kahaani.jpeg?raw=true"
+  },
+  {
+    "title": "Monica, O My Darling",
+    "director": "Vasan Bala",
+    "actors": ["Rajkummar Rao", "Huma Qureshi", "Radhika Apte", "Sikandar Kher", "Bagavathi Perumal"],
+    "genres": ["Crime", "Comedy", "Thriller", "Neo-noir"],
+      "poster": "https://github.com/srujal4518/img/blob/main/monica%20o%20my%20darling.jpeg?raw=true"
+  },
+  {
+    "title": "Raman Raghav 2.0",
+    "director": "Anurag Kashyap",
+    "actors": ["Nawazuddin Siddiqui", "Vicky Kaushal", "Sobhita Dhulipala"],
+    "genres": ["Crime", "Thriller", "Psychological"],
+      "poster": "https://github.com/srujal4518/img/blob/main/raman.jpeg?raw=true"
+  },
+  {
+    "title": "Ratsasan",
+    "director": "Ram Kumar",
+    "actors": ["Vishnu Vishal", "Amala Paul", "Saravanan", "Vinoth Kishan"],
+    "genres": ["Crime", "Thriller", "Mystery"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ratsasan.jpeg?raw=true"
+  },
+  {
+    "title": "Spirit",
+    "director": "Sandeep Reddy Vanga",
+    "actors": ["Prabhas", "Triptii Dimri"],
+    "genres": ["Drama", "Crime"],
+      "poster": "https://github.com/srujal4518/img/blob/main/spirit.jpeg?raw=true"
+  },
+  {
+    "title": "Ugly",
+    "director": "Anurag Kashyap",
+    "actors": ["Ronit Roy", "Tejaswini Kolhapure", "Surveen Chawla", "Rajat Kapoor"],
+    "genres": ["Thriller", "Crime", "Drama"],
+      "poster": "https://github.com/srujal4518/img/blob/main/ugly.jpeg?raw=true"
+  }
+
+  ];
+
+  function searchMovies(event) {
+    const input = event.target.value.toLowerCase();
+    const resultsContainer = document.getElementById("searchResults");
+    resultsContainer.innerHTML = "";
+
+    if (input === "") return;
+
+    const filtered = movies.filter(movie =>
+      movie.title.toLowerCase().includes(input) ||
+      movie.director.toLowerCase().includes(input) ||
+      movie.actors.some(actor => actor.toLowerCase().includes(input)) ||
+      movie.genres.some(genre => genre.toLowerCase().includes(input))
+    );
+
+ if (filtered.length === 0) {
+  resultsContainer.innerHTML = `
+    <div style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 60vh;
+      padding: 40px 20px;
+    ">
+      <p style="color: #ccc; font-size: 22px; font-weight: 500;">
+        Oops! No blockbusters found matching your search 🎞️
+      </p>
+      <p style="color: #888; font-size: 16px; margin-bottom: 30px;">
+        Try checking the spelling or explore a different genre.
+      </p>
+      <img
+        src="https://github.com/srujal4518/img/blob/main/ntofound.jpeg?raw=true"
+        alt="No Results"
+        style="width: 240px; max-width: 90%; opacity: 0.8;"
+      />
+    </div>
+  `;
+  return;
+}
+
+
+
+    filtered.forEach(movie => {
+      const card = document.createElement("div");
+      card.className = "movie-card";
+
+      card.innerHTML = `
+        <img src="${movie.poster}" alt="${movie.title}" />
+        <h3>${movie.title}</h3>
+        <p><strong>Director:</strong> ${movie.director}</p>
+        <p><strong>Cast:</strong> ${movie.actors.slice(0, 3).join(", ")}${movie.actors.length > 3 ? ", ..." : ""}</p>
+        <p><strong>Genres:</strong> ${movie.genres.join(", ")}</p>
+        <button onclick="alert('Playing: ${movie.title}')">Play Now</button>
+      `;
+
+      resultsContainer.appendChild(card);
+    });
+  }
+
+  // Trigger search on page load if query exists
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q");
+  const searchInput = document.getElementById("searchInput");
+
+  if (query && searchInput) {
+    searchInput.value = query;
+    searchMovies({ target: searchInput });
+  }
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

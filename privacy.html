@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script>
+    function preventBack() {
+      window.history.forward();
+    }
+    setTimeout(preventBack, 0);
+  </script>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+
+   <li><a class="active" href="hello.html">Home</a></li>
+      <li><a  href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+  </section>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #000;   /* Black background */
+  color: #fff;              /* White text */
+}
+header {
+  background-image: url("https://github.com/srujal4518/img/blob/main/privacy.jpeg?raw=true");
+  background-color: #111;
+  background-size: cover;           /* Ensures image covers the whole area */
+  background-position: center;      /* Keeps image centered */
+  background-repeat: no-repeat;     /* Prevents repeating */
+  color: #000000;
+  padding: 60px 20px;               /* Taller header */
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  color: #fff;                /* Ensure container text is white */
+}
+
+h2 {
+  color: #fff;
+  margin-top: 40px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+ul {
+  margin: 10px 0 20px 20px;
+  color: #ddd;
+}
+
+.disclaimer {
+  background-color: #222;
+  border: 1px solid #555;
+  color: #ffcc00;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+  .hello{
+    color: #000000;
+  }
+
+footer {
+  background-color: #000000;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StreamFlix</h1>
+    <p class="hello">Privacy Policy</p>
+  </header>
+
+  <div class="container">
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This website is created for educational or demonstration purposes only. We do not claim ownership of any content uploaded or referenced here. All content rights belong to their respective creators and copyright holders.
+    </div>
+
+    <h2>Introduction</h2>
+    <p>This Privacy Policy explains how StreamZone collects, uses, and protects your information when you use our services.</p>
+
+    <h2>Information We Collect</h2>
+    <p>We collect the following information:</p>
+    <ul>
+      <li>Email address</li>
+      <li>Username and password</li>
+      <li>Viewing preferences and watch history</li>
+      <li>Device and browser information</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <p>Your information helps us:</p>
+    <ul>
+      <li>Deliver personalized content and recommendations</li>
+      <li>Maintain and improve platform performance</li>
+      <li>Provide customer support</li>
+      <li>Communicate updates and promotions (if opted-in)</li>
+    </ul>
+
+    <h2>Data Sharing & Security</h2>
+    <p>We do not sell your personal data. We may share data with trusted third-party services to improve the streaming experience (e.g., analytics or hosting providers). All shared data is secured and encrypted.</p>
+
+    <h2>Your Rights</h2>
+    <p>You can access, update, or delete your personal data by contacting us at <a href="mailto:privacy@streamzone.com">privacy@streamzone.com</a>.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any significant changes will be communicated via the platform or email.</p>
+  </div>
+
+ 
+  <footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+</body>
+</html>

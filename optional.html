@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1f2e, #2c2c3d);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    button {
+      margin: 1rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: linear-gradient(135deg, #4cadb2, #5d64cc);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #5ccfc2, #6d78e0);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Would you like to take quick a test about your movie choices?</h2>
+    <button onclick="goToTest()">Yes</button>
+    <button onclick="goToGuest()">No</button>
+  </div>
+
+  <script>
+    function goToTest() {
+      window.location.href = "userinfo.html";
+    }
+
+    function goToGuest() {
+      window.location.href = "hello.html";
+    }
+  </script>
+</body>
+</html>

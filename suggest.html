@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script>
+  </script>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+
+   <li><a class="active" href="hello.html">Home</a></li>
+      <li><a  href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+
+
+  </section>
+  <style>
+.preference-form {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #111;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #fff;
+}
+
+.preference-form h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.preference-form select,
+.preference-form input[type="text"] {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.preference-form select:focus,
+.preference-form input[type="text"]:focus {
+  outline: none;
+  border-color: #e50914;
+  background-color: #121212;
+}
+
+.preference-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e50914;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.preference-form button:hover {
+  background-color: #b20710;
+}
+
+
+/* === Suggested For You Section === */
+.suggestions-wrapper {
+  padding: 40px 20px 60px;
+  background-color: black;
+}
+
+.suggestions-wrapper h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  .preference-form {
+    padding: 20px 10px;
+  }
+
+  .preference-form h2 {
+    font-size: 28px;
+  }
+
+  .suggestions-wrapper h2 {
+    font-size: 24px;
+  }
+
+  .preference-form select,
+  .preference-form input[type="text"],
+  .preference-form button {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+.img-container {
+  position: relative;
+  width: 100%;
+  max-width: 180px; /* adjust based on your design */
+  margin: 0 auto;
+}
+
+.aspect-ratio-box {
+  position: relative;
+  width: 100%;
+  padding-top: 133.33%; /* 4:3 aspect ratio (3/4 = 0.75 → 100/0.75 = 133.33%) */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.aspect-ratio-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+.play-btn :hover{
+  color: aqua;
+}
+  </style>
+</head>
+<body>
+<form id="preferenceForm" class="preference-form">
+  <h2>Choose what you like😊</h2>
+
+  <div class="form-group">
+    <label for="favFilm">Your Favorite Film</label>
+    <select id="favFilm" name="favFilm">
+      <option value="">-- Select --</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="favActor">Your Favorite Actor</label>
+    <select id="favActor" name="favActor">
+      <option value="">-- Select --</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="favActress">Your Favorite Actress</label>
+    <select id="favActress" name="favActress">
+      <option value="">-- Select --</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="favDirector">Your Favorite Director</label>
+    <select id="favDirector" name="favDirector">
+      <option value="">-- Select --</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="favGenre">Your Favorite Genre</label>
+    <select id="favGenre" name="favGenre">
+      <option value="">-- Select --</option>
+    </select>
+  </div>
+
+  <button type="submit">Show Suggestions</button>
+</form>
+
+
+<section class="movie-slider-section">
+  <h2>Here's What we Found</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper" id="suggestedMoviesSwiper">
+      <!-- Movie slides will be injected here -->
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+<script>
+  let allMovies = [];
+let swiperInstance;
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const res = await fetch("data.json");
+  const data = await res.json();
+  allMovies = data.movies;
+
+  populateDropdowns(allMovies);
+});
+
+function populateDropdowns(movies) {
+  const actors = new Set();
+  const actresses = new Set();
+  const directors = new Set();
+  const genres = new Set();
+  const films = new Set();
+
+  movies.forEach((movie) => {
+    films.add(movie.title);
+    movie.actors.forEach((actor) => {
+      const lower = actor.toLowerCase();
+      if (
+        lower.includes("rashmika") ||
+        lower.includes("deepika") ||
+        lower.includes("alia") ||
+        lower.includes("janhvi") ||
+        lower.includes("shruti") ||
+        lower.includes("rani") ||
+        lower.includes("nayanthara") ||
+        lower.includes("triptii") ||
+        lower.includes("diana") ||
+        lower.includes("tanya")
+      ) {
+        actresses.add(actor);
+      } else {
+        actors.add(actor);
+      }
+    });
+    directors.add(movie.director);
+    movie.genres.forEach((g) => genres.add(g));
+  });
+
+  fillSelect("favFilm", films);
+  fillSelect("favActor", actors);
+  fillSelect("favActress", actresses);
+  fillSelect("favDirector", directors);
+  fillSelect("favGenre", genres);
+}
+
+function fillSelect(id, options) {
+  const select = document.getElementById(id);
+  select.innerHTML = `<option value="">-- Select --</option>`;
+  [...options].sort().forEach((option) => {
+    const opt = document.createElement("option");
+    opt.value = option;
+    opt.textContent = option;
+    select.appendChild(opt);
+  });
+}
+
+document.getElementById("preferenceForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const film = document.getElementById("favFilm").value.trim();
+  const actor = document.getElementById("favActor").value.trim();
+  const actress = document.getElementById("favActress").value.trim();
+  const director = document.getElementById("favDirector").value.trim();
+  const genre = document.getElementById("favGenre").value.trim();
+
+  const suggestions = allMovies
+    .map((movie) => {
+      let score = 0;
+      if (film && movie.title === film) score += 5;
+      if (actor && movie.actors.includes(actor)) score += 2;
+      if (actress && movie.actors.includes(actress)) score += 2;
+      if (director && movie.director === director) score += 2;
+      if (genre && movie.genres.includes(genre)) score += 1;
+
+      return { ...movie, score };
+    })
+    .filter((m) => m.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  displaySuggestions(suggestions);
+});
+
+function displaySuggestions(movies) {
+  const container = document.getElementById("suggestedMoviesSwiper");
+  container.innerHTML = "";
+
+  if (movies.length === 0) {
+    container.innerHTML = `<div style="padding:20px; color:#fff;">No suggestions found.</div>`;
+    if (swiperInstance) swiperInstance.update();
+    return;
+  }
+
+  movies.forEach((movie) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide ott-card";
+
+    slide.innerHTML = `
+      <div style="text-align:center;">
+        <div class="img-container">
+         <div class="aspect-ratio-box">
+          <img src="${movie.poster}" alt="${movie.title} Poster" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        <h4 style="color:white; margin-top:10px;">${movie.title}</h4>
+        <p style="color:gray;">${movie.director}</p>
+      </div>
+    `;
+
+    container.appendChild(slide);
+  });
+
+  if (swiperInstance) {
+    swiperInstance.update();
+  } else {
+    swiperInstance = new Swiper(".mySwiper", {
+      slidesPerView: 5,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        320: { slidesPerView: 1 },
+        480: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 5 },
+      },
+    });
+  }
+}
+
+</script>
+<footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

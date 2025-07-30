@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+ 
+</head>
+<style>
+.contact-section {
+  padding: 60px 20px;
+  background-color: #000000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: #2b2b2b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.contact-container h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #e50914;
+}
+
+.contact-container p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3a3a3a;
+  color: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.submit-btn {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #bf0810;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 25px;
+  }
+
+  .contact-container h2 {
+    font-size: 26px;
+  }
+}
+/* Banner Section */
+.banner {
+  width: 100%;
+  height: 350px;
+  background-image: url('https://github.com/srujal4518/website/blob/main/images/about2d.jpg?raw=true'); /* You can replace this */
+  background-size: cover;
+  background-position: center;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-overlay {
+  background-color: rgba(230, 230, 230, 0.6);
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+}
+
+.banner-overlay h1 {
+  color: #0a0a0a;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.banner-overlay p {
+  color: #000000;
+  font-size: 18px;
+}
+
+#contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #010101;
+  padding: 60px 40px;
+  color: #fff;
+}
+
+#contact-details .details {
+  flex: 1 1 400px;
+  padding-right: 20px;
+}
+
+#contact-details .details span {
+  color: #e50914;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#contact-details .details h2 {
+  font-size: 30px;
+  margin: 10px 0 20px;
+  color: #fff;
+}
+
+#contact-details .details h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+#contact-details .details li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: #ddd;
+}
+
+#contact-details .details li i {
+  font-size: 30px;
+  margin-right: 15px;
+  color: #e50914;
+}
+
+#contact-details .details p {
+  margin: 0;
+  color: #ccc;
+}
+
+#contact-details .map {
+  flex: 1 1 400px;
+  height: 60vh;
+  min-height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+}
+
+#contact-details .map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact-details {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  #contact-details .details,
+  #contact-details .map {
+    flex: 1 1 100%;
+    padding: 0;
+  }
+}
+
+</style>
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+  <li><a  href="hello.html">Home</a></li>
+      <li><a  href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+  </section>
+
+  <section class="banner">
+    <div class="banner-overlay">
+      <h1>Contact Us</h1>
+      <p>We’re here to help you binge better 🍿</p>
+    </div>
+  </section>
+
+
+
+
+
+<section id="contact-details" class="section-p1">
+            <div class="details">
+                <span>GET IN TOUCH</span>
+                <h2>Visit one of our agency locations or contact us today</h2>
+                <h3>Head Office</h3>
+                <div>
+                    <li>
+                        <i class='bx bx-map-alt'></i>
+                        <p>GANDHINAGAR</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-envelope' ></i>
+                        <p>StreamFlix@gmail.com</p>
+                    </li>
+                    <li>
+                        <i class='bx bxs-phone' ></i>
+                        <p>9016000361</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-time-five' ></i>
+                        <p>Monday to Saturday: 9.00am to 5.00pm</p>
+                    </li>
+                </div>
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.1283116631794!2d72.68377987454165!3d23.164423212062843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c2b9b9f5e43e1%3A0x4c3c9b9f5bcb4e47!2sGIFT%20City%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1706172838955!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>Have questions, suggestions, or just want to say hello? We’d love to hear from you!</p>
+      
+     <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="subject" placeholder="Subject" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    const res = await fetch('/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const text = await res.text();
+    if (res.ok) {
+      alert("✅ Message sent successfully!");
+      this.reset(); // Clear form
+    } else {
+      alert("❌ " + text);
+    }
+  });
+</script>
+
+
+  <footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

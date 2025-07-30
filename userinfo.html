@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StreamFlix Preferences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+   * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+ background: linear-gradient(135deg, #4cadb2, #5d64cc, #7ea109);
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .container {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(170, 101, 101, 0.67);
+    border-radius: 1.2rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2rem;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .container:hover {
+    transform: scale(1.015);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  h2 {
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #ffda79;
+    text-shadow: 0 0 3px #00000088;
+    transition: color 0.3s ease;
+  }
+
+  select {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+   background: linear-gradient(135deg, #a4e1e4, #afb3ee, #b299e0);
+    color: #000000;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+select:hover,
+select:focus {
+  background: linear-gradient(135deg, #b8b0eb, #d4cfff);
+  transform: scale(1.03);
+  outline: none;
+  box-shadow: 0 0 10px rgba(184, 176, 235, 0.4);
+  color: #1f1f2e;
+}
+
+  button {
+    padding: 1rem 1.8rem;
+    border: none;
+    border-radius: 0.7rem;
+    background: linear-gradient(135deg, #ff8c42, #ff5e62);
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(135deg, #e1791e, #c60c0c);
+    transform: scale(1.03);
+  }
+
+  .result {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #90ee90;
+    margin-top: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .result:hover {
+    color: #b2ffc2;
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    select,
+    button {
+      font-size: 1rem;
+      padding: 0.9rem;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 id="question">Loading...</h2>
+  <select id="dropdown"></select>
+  <button onclick="nextQuestion()">Next</button>
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  const questions = [
+    { text: "What's your favorite movie?", options: ["Inception", "3 Idiots", "Titanic", "DDLJ"] },
+    { text: "Who's your favorite actor?", options: ["Shah Rukh Khan", "Tom Holland", "Leonardo DiCaprio"] },
+    { text: "Who's your favorite actress?", options: ["Deepika Padukone", "Emma Stone"] },
+    { text: "Who's your favorite director?", options: ["Rajkumar Hirani", "Jon Watts"] },
+    { text: "What's your favorite movie genre?", options: ["Action", "Drama", "Comedy"] }
+  ];
+
+  const answers = [];
+  let currentQuestion = 0;
+
+  const questionEl = document.getElementById("question");
+  const dropdown = document.getElementById("dropdown");
+  const resultEl = document.getElementById("result");
+
+  function showQuestion() {
+    const current = questions[currentQuestion];
+    questionEl.textContent = current.text;
+    dropdown.innerHTML = "";
+    current.options.forEach(option => {
+      const opt = document.createElement("option");
+      opt.value = option;
+      opt.textContent = option;
+      dropdown.appendChild(opt);
+    });
+  }
+
+  function nextQuestion() {
+    const selected = dropdown.value;
+    answers.push(selected);
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      document.querySelector("button").style.display = "none";
+      dropdown.style.display = "none";
+      questionEl.textContent = "Thank you!";
+      resultEl.innerHTML = `<ul>${answers.map(a => `<li>${a}</li>`).join("")}</ul>`;
+
+      fetch("/submit_preferences", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers })
+      })
+      .then(res => res.json())
+      .then(() => {
+        window.location.href = "/hello.html";
+      });
+    }
+  }
+
+  showQuestion();
+</script>
+
+</body>
+</html>

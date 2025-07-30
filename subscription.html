@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background:black;
+      color: #333;
+    }
+
+    header {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .plans-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .plan:hover {
+      transform: translateY(-8px);
+    }
+
+    .plan h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #ff0057;
+    }
+
+    .duration {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ff0057;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #730ab9;
+    }
+
+    @media (max-width: 768px) {
+      .plans-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+    <ul id="navbar">
+      <i class="bx bx-x" id="close"></i>
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input type="text" id="searchInput" name="q" placeholder="Search..." required onkeyup="searchProducts(event)" />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+      <li><a href="hello.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a class="active" href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+    <div id="mobile">
+      <a href="profile.html"><i class='bx bx-user'></i></a>
+      <i class='bx bx-menu' id="bar"></i>
+    </div>
+  </section>
+
+  <!-- Subscription Info Section -->
+  <section id="subscribedSection" style="display:none; padding:2rem; color:white;">
+    <h2>You are already subscribed!</h2>
+    <p><strong>Plan:</strong> <span id="subPlan"></span></p>
+    <p><strong>Price:</strong> ₹<span id="subPrice"></span></p>
+    <p><strong>Email:</strong> <span id="subEmail"></span></p>
+    <p><strong>Start Date:</strong> <span id="subStart"></span></p>
+    <p><strong>End Date:</strong> <span id="subEnd"></span></p>
+  </section>
+
+  <!-- Plans Section -->
+  <section id="plansSection">
+    <header>Choose Your Subscription</header>
+    <div class="plans-container">
+      <div class="plan">
+        <h3>Monthly Plan</h3>
+        <div class="price">₹199</div>
+        <div class="duration">Billed every month</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="plan">
+        <h3>4 Months Plan</h3>
+        <div class="price">₹499</div>
+        <div class="duration">Save more – ₹125/month</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+      <div class="plan">
+        <h3>Yearly Plan</h3>
+        <div class="price">₹999</div>
+        <div class="duration">Best value – ₹83/month</div>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Popup Form -->
+  <div id="subscriptionPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:999; justify-content:center; align-items:center;">
+    <form id="subscriptionForm" style="background:white; padding:2rem; border-radius:10px; width:300px; display:flex; flex-direction:column; gap:1rem;">
+      <h3>Subscribe Now</h3>
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="plan" readonly />
+      <button type="submit" class="btn">Submit</button>
+      <button type="button" onclick="closePopup()" style="background:#ccc;">Cancel</button>
+    </form>
+  </div>
+
+  <footer class="ott-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2>StreamFlix</h2>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Help Center</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+          <img src="c:\\Users\\sruja\\Downloads\\insta.jpg" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 StreamZone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  const popup = document.getElementById("subscriptionPopup");
+  const form = document.getElementById("subscriptionForm");
+  const planInput = document.getElementById("plan");
+
+  // Show popup with selected plan
+  document.querySelectorAll(".plan .btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedPlan = e.target.closest(".plan").querySelector("h3").textContent;
+      planInput.value = selectedPlan;
+      popup.style.display = "flex";
+    });
+  });
+
+  // Close popup
+  function closePopup() {
+    popup.style.display = "none";
+  }
+
+  // Form submission for subscription
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = form.querySelector("#name").value;
+    const email = form.querySelector("#email").value;
+    const plan = form.querySelector("#plan").value;
+
+    try {
+      const res = await fetch('/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, plan })
+      });
+
+      const data = await res.json();
+      alert(data.message || '✅ Subscription successful!');
+      form.reset();
+      closePopup();
+      window.location.reload();
+    } catch (err) {
+      alert('❌ Failed to subscribe. Please try again.');
+    }
+  });
+
+  // Check if user is already subscribed
+  async function checkSubscription() {
+    try {
+      const res = await fetch('/api/my-subscription');
+
+      if (!res.ok) {
+        throw new Error("No subscription found");
+      }
+
+      const data = await res.json();
+      console.log("Subscription Data:", data);  // Optional debug
+
+      // Check if valid subscription data exists
+      if (data && data.plan && data.email) {
+        document.getElementById("plansSection").style.display = "none";
+        document.getElementById("subscribedSection").style.display = "block";
+
+        document.getElementById("subPlan").textContent = data.plan;
+document.getElementById("subPrice").textContent = data.price; // after backend fix
+document.getElementById("subEmail").textContent = data.email;
+document.getElementById("subStart").textContent = new Date(data.subscribedOn).toDateString();
+document.getElementById("subEnd").textContent = new Date(data.endsOn).toDateString();
+
+      }
+    } catch (error) {
+      console.log("❌ No active subscription or not logged in");
+    }
+  }
+
+  checkSubscription();
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

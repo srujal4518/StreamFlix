@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: black;
+      color: #333;
+    }
+
+    header {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-container h2 {
+      color: #1d1115;
+      margin-bottom: 1rem;
+    }
+
+    .about-container p {
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      background: #fefefe;
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+    }
+
+    .feature h4 {
+      color: #ff0057;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+
+        <li><a  href="hello.html">Home</a></li>
+      <li><a  href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+  </section>
+
+
+
+
+
+<section>
+  <header>
+    About StreamFlix
+  </header>
+
+  <div class="about-container">
+    <h2>Who We Are</h2>
+    <p>
+      We are a passionate team building a next-generation OTT platform that brings the best of movies, shows, and entertainment right to your screen. Whether you're a fan of thrillers, comedy, drama, or documentaries — we’ve got something for everyone.
+    </p>
+    
+    <p>
+      Our mission is to offer affordable and flexible subscriptions so everyone can enjoy high-quality content without breaking the bank. With smooth streaming, curated recommendations, and interactive features — your entertainment experience just got smarter.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h4>Affordable Plans</h4>
+        <p>Choose from monthly, 4-month, or yearly plans that suit your needs.</p>
+      </div>
+      <div class="feature">
+        <h4>Wide Content Library</h4>
+        <p>Access a growing catalog of popular and exclusive content.</p>
+      </div>
+      <div class="feature">
+        <h4>Seamless Experience</h4>
+        <p>Enjoy high-speed streaming with no ads and personalized suggestions.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

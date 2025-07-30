@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .movie-section {
+  padding: 40px 20px;
+  background-color:black;
+  color: white;
+  
+}
+
+.movie-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3.5rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.ott-card {
+  position: relative;
+  background:#000000; /* Glass effect base */
+  border-radius: 12px;
+  overflow: hidden;
+  width: 200px;
+  height: 280px;
+  margin-top: 20px; /* Top gap */
+  padding: 8px;
+  backdrop-filter: blur(8px); /* Glassmorphism blur */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft depth */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Frosted edge */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ott-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Slightly deeper on hover */
+}
+
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(229, 9, 20, 0.85); /* Netflix-like red */
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  opacity: 0;
+  transition: 
+    opacity 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  pointer-events: none; /* Prevent interaction until visible */
+}
+
+.img-container:hover .play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+  pointer-events: auto; /* Allow clicking when visible */
+}
+
+.play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: rgba(229, 9, 20, 1);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+@media (max-width: 1024px) {
+  .ott-card {
+    width: 180px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+
+  .ott-card {
+    width: 150px;
+    height: 230px;
+  }
+
+  .movie-section {
+    padding: 20px 10px;
+  }
+
+  .movie-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+  }
+
+  .ott-card {
+    width: 130px;
+    height: 210px;
+  }
+
+  .movie-section h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+
+        <li><a  href="hello.html">Home</a></li>
+      <li><a class="active" href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+  </section>
+
+
+<section class="movie-section">
+  <h2>Now Streaming</h2>
+  <div class="movie-grid">
+    <!-- Repeat this block for each movie -->
+    <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/3idiots.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bhagam%20bhag.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+<div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bhool%20bhulaiya.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bhool%20chuk%20maaf.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/golmaal.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/jug%20jug%20jeeyo.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/khatta%20meetha.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/lage%20raho%20munna%20bhai.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/ludo.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/munjhya.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/munna%20bhai%20mbbs.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/phir%20hera%20pheri.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+          <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/pk.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/stree.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+  <div class="swiper-slide ott-card">
+            <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/stree2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/animal.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bloddy%20daddy.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/devara.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+        
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/fighter.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/jawaan.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/kill.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/mardaani.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/pathaan.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/rrr.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/salaar.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/tiger3.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/uri.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/wanted.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+ <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/war.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+         <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/war2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+      <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/404%20error.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/badla.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/drishyam.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/drishyam2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/forensic.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/hit1.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/hit2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/hit3.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/ittefaq.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/kahaani.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/monica%20o%20my%20darling.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/raman.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/ratsasan.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/spirit.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/ugly.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bajrangi.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/barfi.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/dangal.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/dunki.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/englishvbinglish.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/fan.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/inception.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/interstellar.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/jabwemet.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/jawaani.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/rang%20de%20basanti.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/sitaare.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/taare.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/tamasha.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/wakeupsid.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/13B.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/annabella.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/bhoot.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/chhori.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/chhori2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/conjuring.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/conjuring2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/it.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+<div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/it2.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/last%20exorcism.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/nun%20curse.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/pari.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/pizza.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/sinister.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/tumbbad.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/milkha%5D.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/msd.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/neerja.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/oppenheimer.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/paansingh.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/ramanujan.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/sachin.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/sanju.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+       <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/sardaruddham.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+
+        <div class="swiper-slide ott-card">
+          <div class="img-container">
+          <img src="https://github.com/srujal4518/img/blob/main/super30.jpeg?raw=true" />
+          <button class="play-btn">Play Now</button>
+        </div>
+        </div>
+
+
+    <!-- Add more .ott-card blocks as needed -->
+  </div>
+</section>
+
+  <footer class="ott-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h2>StreamFlix</h2>
+    </div>
+    
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="">Terms of Use</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Help Center</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/yourhandle" target="_blank" aria-label="Instagram">
+        <img src="c:\Users\sruja\Downloads\insta.jpg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StreamZone. All rights reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

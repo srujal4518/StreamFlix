@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StreamFlix</title>
+  <link rel="icon" type="image/x-icon" href="./img/icon1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+   .profile-section {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: #111;
+  color: #f1f1f1;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  text-align: left;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-section h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ff4444;
+  margin-bottom: 20px;
+}
+
+.profile-field {
+  font-size: 18px;
+  margin: 12px 0;
+  padding-left: 10px;
+  border-left: 4px solid #ff4444;
+}
+
+.profile-section button {
+  display: block;
+  margin: 30px auto 0;
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: #ff1e1e;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-section button:hover {
+  background-color: #cc0000;
+}
+
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="hello.html">
+      <!-- ✅ Fix the image path -->
+      <img src="https://github.com/srujal4518/img/blob/main/logo.png?raw=true" class="logo" alt="Logo" />
+    </a>
+
+    <!-- ✅ Navbar List -->
+    <ul id="navbar">
+      <!-- ✅ Close Icon placed outside <li> -->
+      <i class="bx bx-x" id="close"></i>
+
+      <li id="lg-search">
+        <form id="searchForm" action="search.html" method="GET">
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Search..."
+            required
+            onkeyup="searchProducts(event)"
+          />
+          <button type="submit"><i class="bx bx-search"></i></button>
+        </form>
+        <ul id="searchResults"></ul>
+      </li>
+
+        <li><a  href="hello.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="subscription.html">Subscriptions</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a class="active"  href="profile.html"><i class="bx bx-user"></i></a></li>
+    </ul>
+
+    <!-- ✅ Mobile View Icons -->
+ <div id="mobile">
+  <a href="profile.html"><i class='bx bx-user'></i></a>
+  <i class='bx bx-menu' id="bar"></i> <!-- Make sure this has the correct ID -->
+</div>
+  </section>
+
+
+<section class="profile-section">
+  <h2>Your Profile</h2>
+
+  <div class="profile-field"><strong>Full Name:</strong> <span id="name"></span></div>
+  <div class="profile-field"><strong>Age:</strong> <span id="age"></span></div>
+  <div class="profile-field"><strong>Email:</strong> <span id="email"></span></div>
+  <div class="profile-field"><strong>Username:</strong> <span id="username"></span></div>
+  <div class="profile-field"><strong>User Type:</strong> <span id="userType"></span></div>
+
+  <button onclick="logout()">Logout</button>
+</section>
+
+<script>
+  async function loadProfile() {
+    try {
+      const res = await fetch('/api/profile');
+      if (!res.ok) throw new Error('Unauthorized');
+      const data = await res.json();
+
+      document.getElementById('name').innerText = data.name;
+      document.getElementById('age').innerText = data.age;
+      document.getElementById('email').innerText = data.email;
+      document.getElementById('username').innerText = data.username;
+      document.getElementById('userType').innerText = data.userType;
+    } catch (err) {
+      window.location.href = 'login.html';
+    }
+  }
+
+  function logout() {
+    window.location.href = '/logout';
+  }
+
+  loadProfile();
+</script>
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
